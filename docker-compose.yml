@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    stdin_open: true #unclear what this does, tut mentioned a "recent bug"
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000" #outside:inside container
+    volumes:
+      - /app/node_modules
+      - .:/app # current working directory. outside:inside
+  tests:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm","run","test"] #this makes it a test container
