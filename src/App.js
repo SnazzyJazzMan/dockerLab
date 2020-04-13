@@ -8,7 +8,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          dungus amongus AWS take 10
+
+          dungus amongus TRAVIS CI merge test
+
         </p>
         <a
           className="App-link"
